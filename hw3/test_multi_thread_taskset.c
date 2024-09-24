@@ -63,6 +63,6 @@ int main() {
     }
     END_CLOCK();
     int elapsed_time = (end.tv_sec - start.tv_sec) * SEC_TO_USEC + (end.tv_usec - start.tv_usec);
-    printf("sum: %lld, elapsed_time: %d", sum, elapsed_time);
+    printf("sum: %lld, elapsed_time: %d\n", sum, elapsed_time);
     return 0;
 }
