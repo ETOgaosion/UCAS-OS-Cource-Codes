@@ -69,4 +69,4 @@ Running test_multi_thread_taskset:
 sum: 500000500000, elapsed_time: 1730
 ```
 
-Acceptable: $Time(test_multi_thread_taskset) > Time(test_multi_thread)$
+Acceptable: $Time(test\ multi\ thread\ taskset) > Time(test\ multi\ thread)$
