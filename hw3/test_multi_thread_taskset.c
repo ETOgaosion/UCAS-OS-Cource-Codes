@@ -30,7 +30,7 @@ int stick_this_thread_to_core(int core_id) {
 void *array_sum(void *arg) {
     sum_data_t *sum_data_local = (sum_data_t *)arg;
     int thread_id = sum_data_local->thread_id;
-    stick_this_thread_to_core(thread_id * 2);   // avoid hyperthread preempting this thread
+    stick_this_thread_to_core(thread_id);   // avoid hyperthread preempting this thread
     int start = SIZE / THREAD_NUM * thread_id, end = start + SIZE / THREAD_NUM;
     long long local_sum;
     for (int times = 0; times < LOOP_NUM; times++) {
@@ -63,6 +63,6 @@ int main() {
     }
     END_CLOCK();
     int elapsed_time = (end.tv_sec - start.tv_sec) * SEC_TO_USEC + (end.tv_usec - start.tv_usec);
-    printf("sum: %lld, elapsed_time: %d\n", sum, elapsed_time);
+    printf("sum: %lld, elapsed_time: %d\n", sum, elapsed_time / LOOP_NUM);
     return 0;
 }
