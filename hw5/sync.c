@@ -70,15 +70,23 @@ void *read_thread(void *arg) {
 }
 
 #ifdef CHECK_RESULT
-void check_result() {
+void check_result(int full_check) {
+    int failed = 0;
     for (int i = 0; i < LOOP_NUM; i++) {
         int sum = 0;
         for (int j = 0; j < ARRAY_SIZE; j++) {
             sum += check_array[i][j];
         }
         if (sum != check_sum[i]) {
+            failed = 1;
+            if (full_check == 0) {
+                break;
+            }
             printf("check failed at %d, sum = %d\n", i, sum);
         }
+    }
+    if (failed == 0) {
+        printf("check passed\n");
     }
 }
 #endif
@@ -96,7 +104,7 @@ int main() {
     pthread_join(threads[1], NULL);
     pthread_mutex_destroy(&mutex);
     #ifdef CHECK_RESULT
-    check_result();
+    check_result(1);
     #endif
     return 0;
 }

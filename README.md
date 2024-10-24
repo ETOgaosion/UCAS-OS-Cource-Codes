@@ -70,3 +70,31 @@ sum: 500000500000, elapsed_time: 1730
 ```
 
 Acceptable: $Time(test\ multi\ thread\ taskset) > Time(test\ multi\ thread)$
+
+#### Homework 5
+
+Only show last 10 Results
+
+```
+write version: 990, array: 7 6 11 14 18 , sum = 56
+read version: 990, sum = 56
+write version: 991, array: 16 7 16 13 1 , sum = 53
+read version: 991, sum = 53
+write version: 992, array: 10 2 2 18 14 , sum = 46
+read version: 992, sum = 46
+write version: 993, array: 6 13 12 2 11 , sum = 44
+read version: 993, sum = 44
+write version: 994, array: 10 19 14 7 2 , sum = 52
+read version: 994, sum = 52
+write version: 995, array: 10 11 0 3 9 , sum = 33
+read version: 995, sum = 33
+write version: 996, array: 8 2 8 12 9 , sum = 39
+read version: 996, sum = 39
+write version: 997, array: 6 8 16 2 1 , sum = 33
+read version: 997, sum = 33
+write version: 998, array: 9 12 15 11 2 , sum = 49
+read version: 998, sum = 49
+write version: 999, array: 2 18 8 14 12 , sum = 54
+read version: 999, sum = 54
+check passed
+```
