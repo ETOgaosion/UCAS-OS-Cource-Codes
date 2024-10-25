@@ -98,3 +98,25 @@ write version: 999, array: 2 18 8 14 12 , sum = 54
 read version: 999, sum = 54
 check passed
 ```
+
+#### Homework 7
+
+```
+Initial data: 36, 20, 47, 72, 47, 31, 34, 82, 26, 40, 80, 8, 58, 66, 34, 83, Initial sum: 764
+Thread 1 added 66 + 58 = 124
+Thread 0 added 83 + 34 = 117
+Thread 7 added 20 + 36 = 56
+Thread 6 added 72 + 47 = 119
+Thread 2 added 8 + 80 = 88
+Thread 0 added 117 + 124 = 241
+Thread 6 added 119 + 56 = 175
+Thread 4 added 82 + 34 = 116
+Thread 5 added 31 + 47 = 78
+Thread 3 added 40 + 26 = 66
+Thread 0 added 241 + 88 = 329
+Thread 3 added 66 + 78 = 144
+Thread 4 added 116 + 175 = 291
+Thread 3 added 144 + 329 = 473
+Thread 3 added 473 + 291 = 764
+Final reduction result: 764, reference sum: 764, same? 1
+```
